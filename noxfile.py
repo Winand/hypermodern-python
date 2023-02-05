@@ -32,7 +32,7 @@ def install_with_constraints(session: Session, *args: str, **kwargs: Any) -> Non
             "poetry",
             "export",
             "--dev",
-            "--format=requirements.txt",
+            "--format=constraints.txt",
             f"--output={requirements.name}",
             external=True,
         )
