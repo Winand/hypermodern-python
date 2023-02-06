@@ -57,6 +57,8 @@ def random_page(language: str = "en") -> Page:
         with requests.get(url) as response:
             response.raise_for_status()
             data = response.json()
+            if {'key': None}['key']:
+                print("no coverage")
             return schema.load(data)
     except (requests.RequestException, marshmallow.ValidationError) as error:
         message = str(error)
